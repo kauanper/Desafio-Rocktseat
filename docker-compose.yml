@@ -7,9 +7,20 @@ services:
       - POSTGRES_PASSWORD=senha_forte
       - POSTGRES_DB=desafio_db
     ports:
-      - "5050:5432"  # Porta do seu PC (5050) -> Porta do Container (5432)
+      - "5050:5432"
     volumes:
       - pgdata:/var/lib/postgresql/data
+
+  pgadmin:
+    image: dpage/pgadmin4
+    container_name: pgadmin-desafio
+    environment:
+      - PGADMIN_DEFAULT_EMAIL=admin@admin.com
+      - PGADMIN_DEFAULT_PASSWORD=admin
+    ports:
+      - "8080:80" # Você acessará o pgAdmin em localhost:8080
+    depends_on:
+      - db
 
 volumes:
   pgdata:
