@@ -3,9 +3,9 @@ services:
     image: postgres:15-alpine
     container_name: postgres-desafio
     environment:
-      - POSTGRES_USER=admin
-      - POSTGRES_PASSWORD=senha_forte
-      - POSTGRES_DB=desafio_db
+      - POSTGRES_USER=${DB_USER}
+      - POSTGRES_PASSWORD=${DB_PASSWORD}
+      - POSTGRES_DB=${DB_NAME}
     volumes:
       - pgdata:/var/lib/postgresql/data
 
