@@ -1,0 +1,15 @@
+services:
+  db:
+    image: postgres:alpine
+    container_name: postgres-desafio
+    environment:
+      - POSTGRES_USER=admin
+      - POSTGRES_PASSWORD=senha_forte
+      - POSTGRES_DB=desafio_db
+    ports:
+      - "5050:5432"  # Porta do seu PC (5050) -> Porta do Container (5432)
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+
+volumes:
+  pgdata:
