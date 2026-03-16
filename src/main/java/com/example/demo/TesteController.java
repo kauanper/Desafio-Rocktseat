@@ -13,7 +13,7 @@ public class TesteController {
     private TestRepository testRepository;
 
     @GetMapping
-    public void teste(){
+    public void teste(){ //só pra brincar hihi
 
         Teste teste = new Teste();
         teste.setDescricao("piririmpiririm");
